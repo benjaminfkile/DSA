@@ -56,7 +56,6 @@ class LinkedList {
     }
 
     remove(list, item) {
-
         if (!list.head) {
             return "empty list"
         }
@@ -67,8 +66,8 @@ class LinkedList {
         } else {
             for (let i = 0; i < list.nodes.length; i++) {
                 if (list.nodes[i].val === item) {
-                    list.nodes[i].val = list.nodes[i + 1].val
-                    list.nodes.splice(i, i)
+                    list.nodes[i].val = list.nodes[i].next
+                    list.nodes.splice(i, i-2)
                 }
             }
         }
@@ -83,11 +82,16 @@ linkedList.insertFirst('1')
 linkedList.add('2')
 linkedList.add('3')
 linkedList.add('4')
-linkedList.insertLast("5")
+linkedList.add('5')
+linkedList.add('6')
+linkedList.add('8')
+linkedList.add('9')
+linkedList.add('10')
+
 
 
 // console.log(linkedList.find(linkedList, '2'))
 
-// console.log(linkedList.remove(linkedList, "3"))
+console.log(linkedList.remove(linkedList, "9"))
 
 
